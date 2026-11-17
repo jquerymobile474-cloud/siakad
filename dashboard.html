@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard SIAKAD</title>
+    <link rel="stylesheet" href="assets/css/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="logo">🎓</div>
+            <h1>Dashboard SIAKAD</h1>
+            <p class="subtitle" id="welcome"></p>
+            <button class="btn-primary" onclick="DB.logout()">
+                Logout
+            </button>
+        </div>
+    </div>
+
+    <script src="assets/js/storage.js"></script>
+    <script>
+        const session = DB.getSession();
+
+        if (!session) {
+            location.href = "login.html";
+        } else {
+            document.getElementById("welcome").textContent =
+                "Selamat datang, " + session.nama +
+                " | Role: " + session.role;
+        }
+    </script>
+</body>
+</html>

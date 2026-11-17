@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Siswa - SIAKAD</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <span class="brand-icon">🎓</span>
+            <span class="brand-text">SIAKAD</span>
+        </div>
+
+        <div class="sidebar-menu">
+
+            <div class="menu-label">MENU UTAMA</div>
+
+            <a href="#dashboard" class="menu-item active">
+                <span>▦</span>
+                <span class="menu-text">Dashboard</span>
+            </a>
+
+            <div class="menu-label">AKADEMIK</div>
+
+            <a href="#profil" class="menu-item">
+                <span>♙</span>
+                <span class="menu-text">Profil Saya</span>
+            </a>
+
+            <a href="#jadwal" class="menu-item">
+                <span>◷</span>
+                <span class="menu-text">Jadwal Pelajaran</span>
+            </a>
+
+            <a href="#absensi" class="menu-item">
+                <span>✓</span>
+                <span class="menu-text">Riwayat Absensi</span>
+            </a>
+
+            <a href="#nilai" class="menu-item">
+                <span>✎</span>
+                <span class="menu-text">Nilai Akademik</span>
+            </a>
+
+            <a href="#rapor" class="menu-item">
+                <span>▧</span>
+                <span class="menu-text">Rapor</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="logout-btn" onclick="DB.logout()">
+                <span>⇥</span>
+                <span class="menu-text">Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="navbar">
+
+            <button class="toggle-btn" id="toggleSidebar">
+                <span id="toggleIcon">‹‹</span>
+            </button>
+
+            <div class="navbar-title">
+                Dashboard Siswa
+            </div>
+
+            <div class="navbar-profile">
+                <div class="avatar">S</div>
+                <div class="profile-info">
+                    <strong id="profileName">Siswa</strong>
+                    <small>Peserta Didik</small>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="content">
+
+            <div class="page-heading" id="dashboard">
+                <h2>Dashboard Siswa</h2>
+                <p>Selamat datang di portal akademik siswa.</p>
+            </div>
+
+            <!-- INFORMASI SINGKAT -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">◷</div>
+                    <div>
+                        <p>Jadwal Pelajaran</p>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">✓</div>
+                    <div>
+                        <p>Kehadiran</p>
+                        <h2>-</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">✎</div>
+                    <div>
+                        <p>Nilai Rata-rata</p>
+                        <h2>-</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- PROFIL -->
+
+            <section class="panel" id="profil">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Profil Siswa</h3>
+                        <p>Informasi akun siswa yang sedang login.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Nama Lengkap</label>
+                        <input type="text" id="siswaNama" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="siswaUsername" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Role</label>
+                        <input type="text" value="Siswa" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Status Akun</label>
+                        <input type="text" id="siswaStatus" readonly>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- JADWAL -->
+
+            <section class="panel" id="jadwal" style="margin-top:20px">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Jadwal Pelajaran</h3>
+                        <p>Jadwal kegiatan belajar mengajar.</p>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Hari</th>
+                                <th>Jam</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Guru</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td colspan="5" style="text-align:center">
+                                    Belum ada jadwal pelajaran.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+            <!-- ABSENSI -->
+
+            <section class="panel" id="absensi" style="margin-top:20px">
+
+                <h3>Riwayat Absensi</h3>
+
+                <p style="margin-top:10px;color:#64748b;font-size:13px">
+                    Data riwayat kehadiran akan ditampilkan setelah
+                    modul absensi dibuat.
+                </p>
+
+            </section>
+
+            <!-- NILAI -->
+
+            <section class="panel" id="nilai" style="margin-top:20px">
+
+                <h3>Nilai Akademik</h3>
+
+                <p style="margin-top:10px;color:#64748b;font-size:13px">
+                    Nilai akademik akan ditampilkan setelah
+                    modul penilaian dibuat.
+                </p>
+
+            </section>
+
+            <!-- RAPOR -->
+
+            <section class="panel" id="rapor" style="margin-top:20px">
+
+                <h3>Rapor</h3>
+
+                <p style="margin-top:10px;color:#64748b;font-size:13px">
+                    Rapor akan tersedia setelah data penilaian lengkap.
+                </p>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/dashboard.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const user = DB.getSession();
+
+    if (!user || user.role !== "siswa") return;
+
+    document.getElementById("siswaNama").value =
+        user.nama;
+
+    document.getElementById("siswaUsername").value =
+        user.username;
+
+    document.getElementById("siswaStatus").value =
+        "Aktif";
+
+});
+</script>
+
+</body>
+</html>

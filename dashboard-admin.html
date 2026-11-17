@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - SIAKAD</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <span class="brand-icon">🎓</span>
+            <span class="brand-text">SIAKAD</span>
+        </div>
+
+        <div class="sidebar-menu">
+
+            <div class="menu-label">MENU UTAMA</div>
+
+            <a href="#dashboard" class="menu-item active">
+                <span>▦</span>
+                <span class="menu-text">Dashboard</span>
+            </a>
+
+            <div class="menu-label">AKADEMIK</div>
+
+            <a href="#pengguna" class="menu-item">
+                <span>♙</span>
+                <span class="menu-text">Manajemen Pengguna</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>♟</span>
+                <span class="menu-text">Data Siswa</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>♧</span>
+                <span class="menu-text">Data Guru</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>▤</span>
+                <span class="menu-text">Data Kelas</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>▣</span>
+                <span class="menu-text">Mata Pelajaran</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>◷</span>
+                <span class="menu-text">Jadwal Pelajaran</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>✓</span>
+                <span class="menu-text">Absensi</span>
+            </a>
+
+            <a href="#" class="menu-item">
+                <span>✎</span>
+                <span class="menu-text">Penilaian</span>
+            </a>
+
+            <div class="menu-label">LAINNYA</div>
+
+            <a href="#" class="menu-item">
+                <span>▧</span>
+                <span class="menu-text">Laporan</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="logout-btn" onclick="DB.logout()">
+                <span>⇥</span>
+                <span class="menu-text">Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="navbar">
+
+            <button class="toggle-btn" id="toggleSidebar">
+                <span id="toggleIcon">‹‹</span>
+            </button>
+
+            <div class="navbar-title">
+                Dashboard Admin
+            </div>
+
+            <div class="navbar-profile">
+                <div class="avatar">A</div>
+                <div class="profile-info">
+                    <strong id="profileName">Admin</strong>
+                    <small>Administrator</small>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="content">
+
+            <div class="page-heading" id="dashboard">
+                <h2>Dashboard Admin</h2>
+                <p>Selamat datang di panel administrasi akademik.</p>
+            </div>
+
+            <!-- STATISTIK -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">♙</div>
+                    <div>
+                        <p>Total Siswa</p>
+                        <h2 id="totalSiswa">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">♧</div>
+                    <div>
+                        <p>Total Guru</p>
+                        <h2 id="totalGuru">0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">▤</div>
+                    <div>
+                        <p>Total Pengguna</p>
+                        <h2 id="totalUser">0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MANAJEMEN PENGGUNA -->
+
+            <section class="panel" id="pengguna">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Manajemen Pengguna</h3>
+                        <p>Kelola akun Guru dan Siswa.</p>
+                    </div>
+
+                    <button class="btn-primary" id="btnTambah">
+                        + Tambah Pengguna
+                    </button>
+                </div>
+
+                <div class="user-form-container" id="userFormContainer">
+
+                    <h3 id="formTitle">Tambah Pengguna</h3>
+
+                    <form id="userForm">
+
+                        <input type="hidden" id="editId">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+                                <label>Nama Lengkap</label>
+                                <input type="text" id="namaUser" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Username</label>
+                                <input type="text" id="usernameUser" required>
+                            </div>
+
+                            <div class="form-group" id="passwordGroup">
+                                <label>Password</label>
+                                <input type="password" id="passwordUser"
+                                    minlength="6">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Role</label>
+                                <select id="roleUser" required>
+                                    <option value="guru">Guru</option>
+                                    <option value="siswa">Siswa</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Status</label>
+                                <select id="statusUser">
+                                    <option value="aktif">Aktif</option>
+                                    <option value="nonaktif">Nonaktif</option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">
+                                Simpan
+                            </button>
+
+                            <button type="button"
+                                class="btn-secondary" id="btnBatal">
+                                Batal
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="table-toolbar">
+                    <input type="search" id="searchUser"
+                        placeholder="Cari nama atau username...">
+                </div>
+
+                <div class="table-responsive">
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Nama</th>
+                                <th>Username</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="userTable"></tbody>
+                    </table>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/dashboard.js"></script>
+<script src="assets/js/users.js"></script>
+
+</body>
+</html>

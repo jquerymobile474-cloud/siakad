@@ -1,0 +1,253 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Guru - SIAKAD</title>
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+</head>
+<body>
+
+<div class="app">
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-brand">
+            <span class="brand-icon">🎓</span>
+            <span class="brand-text">SIAKAD</span>
+        </div>
+
+        <div class="sidebar-menu">
+
+            <div class="menu-label">MENU UTAMA</div>
+
+            <a href="#dashboard" class="menu-item active">
+                <span>▦</span>
+                <span class="menu-text">Dashboard</span>
+            </a>
+
+            <div class="menu-label">KEGIATAN MENGAJAR</div>
+
+            <a href="#jadwal" class="menu-item">
+                <span>◷</span>
+                <span class="menu-text">Jadwal Mengajar</span>
+            </a>
+
+            <a href="#kelas" class="menu-item">
+                <span>▤</span>
+                <span class="menu-text">Kelas Saya</span>
+            </a>
+
+            <a href="#absensi" class="menu-item">
+                <span>✓</span>
+                <span class="menu-text">Absensi Siswa</span>
+            </a>
+
+            <a href="#nilai" class="menu-item">
+                <span>✎</span>
+                <span class="menu-text">Input Nilai</span>
+            </a>
+
+            <a href="#rekap" class="menu-item">
+                <span>▧</span>
+                <span class="menu-text">Rekap Nilai</span>
+            </a>
+
+            <div class="menu-label">AKUN</div>
+
+            <a href="#profil" class="menu-item">
+                <span>♙</span>
+                <span class="menu-text">Profil Saya</span>
+            </a>
+
+        </div>
+
+        <div class="sidebar-bottom">
+            <button class="logout-btn" onclick="DB.logout()">
+                <span>⇥</span>
+                <span class="menu-text">Logout</span>
+            </button>
+        </div>
+
+    </aside>
+
+    <main class="main-content">
+
+        <header class="navbar">
+
+            <button class="toggle-btn" id="toggleSidebar">
+                <span id="toggleIcon">‹‹</span>
+            </button>
+
+            <div class="navbar-title">
+                Dashboard Guru
+            </div>
+
+            <div class="navbar-profile">
+                <div class="avatar">G</div>
+                <div class="profile-info">
+                    <strong id="profileName">Guru</strong>
+                    <small>Tenaga Pendidik</small>
+                </div>
+            </div>
+
+        </header>
+
+        <div class="content">
+
+            <div class="page-heading" id="dashboard">
+                <h2>Dashboard Guru</h2>
+                <p>Selamat datang di portal akademik guru.</p>
+            </div>
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+                    <div class="stat-icon blue">▤</div>
+                    <div>
+                        <p>Kelas Diampu</p>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon green">♙</div>
+                    <div>
+                        <p>Total Siswa</p>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon orange">◷</div>
+                    <div>
+                        <p>Jadwal Mengajar</p>
+                        <h2>0</h2>
+                    </div>
+                </div>
+
+            </div>
+
+            <section class="panel" id="jadwal">
+
+                <div class="panel-header">
+                    <div>
+                        <h3>Jadwal Mengajar</h3>
+                        <p>Daftar jadwal kegiatan mengajar Anda.</p>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No</th>
+                                <th>Hari</th>
+                                <th>Jam</th>
+                                <th>Mata Pelajaran</th>
+                                <th>Kelas</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <tr>
+                                <td colspan="5" style="text-align:center">
+                                    Belum ada jadwal mengajar.
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </section>
+
+            <section class="panel" id="kelas" style="margin-top:20px">
+                <div class="panel-header">
+                    <div>
+                        <h3>Kelas Saya</h3>
+                        <p>Daftar kelas yang menjadi tanggung jawab Anda.</p>
+                    </div>
+                </div>
+
+                <p style="color:#64748b;font-size:13px">
+                    Data kelas akan ditampilkan setelah modul kelas dibuat.
+                </p>
+            </section>
+
+            <section class="panel" id="absensi" style="margin-top:20px">
+                <div class="panel-header">
+                    <div>
+                        <h3>Absensi Siswa</h3>
+                        <p>Kelola kehadiran siswa di kelas Anda.</p>
+                    </div>
+                </div>
+
+                <p style="color:#64748b;font-size:13px">
+                    Fitur absensi akan dikembangkan pada Tahap 5.
+                </p>
+            </section>
+
+            <section class="panel" id="nilai" style="margin-top:20px">
+                <div class="panel-header">
+                    <div>
+                        <h3>Input Nilai</h3>
+                        <p>Kelola nilai akademik siswa.</p>
+                    </div>
+                </div>
+
+                <p style="color:#64748b;font-size:13px">
+                    Fitur penilaian akan dikembangkan pada Tahap 6.
+                </p>
+            </section>
+
+            <section class="panel" id="rekap" style="margin-top:20px">
+                <h3>Rekap Nilai</h3>
+                <p style="color:#64748b;font-size:13px;margin-top:10px">
+                    Rekap nilai belum tersedia.
+                </p>
+            </section>
+
+            <section class="panel" id="profil" style="margin-top:20px">
+                <h3>Profil Saya</h3>
+                <p style="margin-top:12px">
+                    Nama:
+                    <strong id="guruNama">-</strong>
+                </p>
+                <p style="margin-top:8px">
+                    Username:
+                    <strong id="guruUsername">-</strong>
+                </p>
+                <p style="margin-top:8px">
+                    Role:
+                    <strong>Guru</strong>
+                </p>
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="assets/js/storage.js"></script>
+<script src="assets/js/dashboard.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+
+    const user = DB.getSession();
+
+    if (!user || user.role !== "guru") return;
+
+    document.getElementById("guruNama").textContent =
+        user.nama;
+
+    document.getElementById("guruUsername").textContent =
+        user.username;
+
+});
+</script>
+
+</body>
+</html>
